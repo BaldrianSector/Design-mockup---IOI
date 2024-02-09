@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>🛠️ PROTOTYPE</title>
+    <link rel="stylesheet" href="/src/output.css">
+    <script src="../script.js" defer></script>
+</head>
+
+<style>
+    
+:root {
+    --primary-color: white;
+    --secondary-color: black;
+    --tertiary-color: red;
+    --quaternary-color: gray;
+    --quinary-color: #111215;
+    --senary-color: #2C2C2C;
+    --primary-font: "Helvetica Neue", sans-serif;
+    --secondary-font: "Roboto", sans-serif;
+}
+
+body {
+    background-color: var(--quinary-color);
+    margin: 0px;
+    color: var(--primary-color);
+}
+
+/* Main content styles */
+main {
+    padding: 0px;
+    width: 100;
+}
+
+/* Header styles */
+header {
+    z-index: 3;
+    grid-area: Header;
+
+    display: grid;
+    grid-template-columns: 2fr 1.3fr 0.7fr;
+    padding: 20px 0px;
+    grid-template-areas: "Logo Navigation Account"
+    ;
+    font-family: var(--secondary-font); 
+}
+
+.logo {
+    grid-area: Logo;
+    justify-self: start;
+    color: var(--primary-color);
+}
+
+nav {
+    grid-area: Navigation;
+    justify-self: start;
+}
+
+nav a {
+    margin-right: 10px;
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.account {
+    grid-area: Account;
+    justify-self: end;
+}
+
+.account a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.padding-box {
+    padding: 0px 7vw;
+}
+
+.hero {
+    position: relative; /* Add this line */
+    height: 100vh;
+    background-image: url('/assets/images/Hero_Background.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: grid;
+    grid-template-columns: 2fr 1.3fr 0.7fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "Header Header Header"
+                         ". . ."
+                         "List Death-Awaits .";
+    ;
+}
+
+#man {
+    z-index: 0;
+    position: absolute;
+    bottom: 0px; /* Change 'top' to 'bottom' */
+    left: 20vw;
+    object-fit: none;
+    /* -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none; */
+    pointer-events: none;
+}
+
+ul {
+    z-index: 2;
+    justify-content: space-between;
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    font-family: var(--secondary-font);
+    font-weight: regular;
+    color: var(--primary-color);
+    line-height: 1.6;
+}
+
+ul li:hover {
+    text-decoration: underline 2px red;
+    text-underline-offset: 5px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+#nav-list {
+    grid-area: List;
+    justify-self: start;
+    align-self: start;
+}
+
+.death-awaits {
+    z-index: 2;
+    grid-area: Death-Awaits;
+}
+
+span {
+    font-family: var(--primary-font);
+    font-weight: bold;
+    font-size: 1rem;
+    color: var(--secondary-color);
+    padding: 0.2rem 0.5rem;
+}
+
+h1 {
+    font-family: var(--primary-font);
+    font-weight: bold;
+    font-size: 3.5rem;
+    color: var(--primary-color);
+    margin: 2rem 0px;
+    line-height: 1.2;
+}
+
+h2 {
+    font-family: var(--primary-font);
+    font-weight: bold;
+    font-size: 2.4rem;
+    color: var(--primary-color);
+    margin: -0.35rem 0px;
+    line-height: normal;
+}
+
+h3 {
+    font-family: var(--secondary-font);
+    color: var(--quaternary-color);
+    line-height: 1.7;
+    font-weight: normal;
+    font-size: 1rem;
+}
+
+#lorem {
+    font-weight: normal;
+}
+
+#hitman {
+    margin-left: 0.25rem;
+    letter-spacing: 0.5rem;
+    padding-left: 1rem;
+}
+
+.text-module {
+    height: 60vh;
+    background-color: var(--quaternary-color);
+
+    background-image: url('/assets/images/map.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: grid;
+    grid-template-columns: 2fr 1.3fr 0.7fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: ". . ."
+                         "Title Video Video"
+                         ". Video Video";
+    ;
+}
+
+#woa {
+    grid-area: Title;
+    justify-self: start;
+    align-self: start;
+}
+
+#yt-trailer {
+    grid-area: Video;
+    justify-self: start;
+    align-self: start;
+    border: none;
+}
+
+.section-header {
+    height: 100vh;
+    background-color: var(--quinary-color);
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+
+    text-transform: uppercase;
+}
+
+#assasin {
+    justify-self: center;
+    align-self: center;
+    mask-image: linear-gradient(black, transparent);
+    user-select: none;
+    pointer-events: none;
+    object-fit: cover;
+    max-width: 100%;
+}
+
+.text-container {
+    position: absolute;
+    margin-top: 25vh;
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+    z-index: 2;
+}
+
+.big-title {
+    font-size: 7rem;
+}
+
+.sub-title {
+    font-size: 1.4rem;
+}
+
+hr {
+    opacity: 0.5;
+    border-color: var(--quaternary-color);
+    width: 86%;
+    margin: 0px auto;
+}
+
+.slider {
+    height: 100vh;
+    background-color: var(--quinary-color);
+
+    display: grid;
+    grid-template-columns: 2fr 1.3fr 0.7fr;
+    grid-template-rows: 0.5fr 0.5fr 2fr;
+    grid-template-areas: ". . ."
+                         "Title Text Text"
+                         "Slider Slider Slider";
+    ;
+}
+
+#your-game {
+    grid-area: Title;
+    justify-self: start;
+    align-self: start;
+}
+
+#acilis {
+    grid-area: Text;
+    align-self: start;
+    margin-top: -0.4rem;
+    justify-self: end;
+    width: 20rem;
+}
+
+#Vitae {
+    grid-area: Text;
+    align-self: start;
+    margin-top: -0.4rem;
+    justify-self: start;
+    width: 30rem;
+}
+
+.article-slider {
+    width: 100%;
+    grid-area: Slider;
+    justify-self: start;
+    align-self: start;
+
+    gap: 1rem;
+    margin-top: 1rem;
+    
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 623px;
+
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+
+    -ms-overflow-style: "none";
+    scrollbar-width: "none";
+}
+
+.article-slider::-webkit-scrollbar {
+    display: none;
+}
+
+.preview {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    width: 623px;
+    Height: 491px;
+    padding: 1.5rem;
+    padding-top: 340px;
+    border: 1px solid var(--senary-color);
+}
+
+.big-slider {
+    height: 100vh;
+    background-color: var(--quinary-color);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.5fr 0.5fr 2fr;
+    grid-template-areas: ". . ."
+                         "Title Text Text"
+                         "Slider Slider Slider";
+    ;
+}
+
+.big-image {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    width: 1268px;
+    Height: 491px;
+    padding: 1.5rem;
+    padding-top: 340px;
+    border: 1px solid var(--senary-color);
+}
+
+.big-image-slider {
+    width: 100%;
+    grid-area: Slider;
+    justify-self: start;
+    align-self: start;
+
+    gap: 1rem;
+    margin-top: 1rem;
+    
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1268px;
+
+    background-position: center center;
+
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+
+    -ms-overflow-style: "none";
+    scrollbar-width: "none";
+}
+
+.big-image-slider::-webkit-scrollbar {
+    display: none;
+}
+
+.p1 {background-image: linear-gradient(to bottom, transparent 35%, var(--quinary-color) 75%), url('/assets/images/article-slider/Preview1.png');}
+.p2 {background-image: linear-gradient(to bottom, transparent 35%, var(--quinary-color) 75%), url('/assets/images/article-slider/Preview2.png');}
+.p3 {background-image: linear-gradient(to bottom, transparent 35%, var(--quinary-color) 75%), url('/assets/images/article-slider/Preview3.jpg');}
+.p4 {background-image: linear-gradient(to bottom, transparent 35%, var(--quinary-color) 75%), url('/assets/images/article-slider/Preview4.webp');}
+.p5 {background-image: linear-gradient(to bottom, transparent 35%, var(--quinary-color) 75%), url('/assets/images/article-slider/Preview5.webp');}
+
+.b1 {background-image: url(/assets/images/image-slider/Burj_Khalifa_Dubai.png);}
+.b2 {background-image: url(/assets/images/image-slider/Mendoza_Argentina.png);}
+.b3 {background-image: url(/assets/images/image-slider/Club_Hölle_Germany.png);}
+.b4 {background-image: url(/assets/images/image-slider/Chonq_Ping_China.png);}
+.b5 {background-image: url(/assets/images/image-slider/Whittleton_Creek_USA.jpg);}
+
+.white-text {
+    color: var(--primary-color);
+    opacity: 0.6;
+    width: 23%;
+    padding-top: 10px;
+}
+
+</style>
+<body class="no-scrollbar">
+    <main>
+        <div class="padding-box hero">
+            <header>
+                <div class="logo">
+                    <a href="/"><img src="/assets/images/Logo.png" alt="IOI"></a>
+                </div>
+                <nav>
+                    <a href="/">Careers</a>
+                    <a href="/">News</a>
+                    <a href="/">Games</a>
+                    <a href="/">About</a>
+                    <a href="/">Store</a>
+                </nav>
+                <div class="account b">
+                    <a href="">Account
+                        <img
+                        loading="lazy" class="inline align-baseline"
+                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/10e0d9f819934dade75689029b9e07df3bbc66d62cedf2e82bc8d4bca30c7751?apiKey=ce9ee94cb4674e18a5e0c72137c80dcf&"/>
+                    </a>
+                </div>
+            </header>
+            <ul id="nav-list">
+                <li><a href="/">Introduction</a></li>
+                <li><a href="/">Story and features</a></li>
+                <li><a href="/">Assasinate</a></li>
+                <li><a href="/">Hardware</a></li>
+                <li><a href="/">Explore world</a></li>
+                <li><a href="/">News</a></li>
+                <li><a href="/">Game support</a></li>
+            </ul>
+            <img src="/assets/images/Man.png" alt="Hitman" id="man">
+            <div class="death-awaits">
+                <span style="background-color: var(--tertiary-color);" id="hitman">HITMAN</span> <span style="background-color: var(--tertiary-color);" id="iii">III</span>
+                <h1>DEATH AWAITS</h1>
+                <h3 id="lorem" class="-mt-5">Tristique quis varius habitasse facilisi semper, penatibus interdum maecenas netus himenaeos aliquet, nam torquent volutpat inceptos. Erat risus ut blandit suspendisse.</h3>
+            </div>
+        </div>
+        <div class="padding-box text-module">
+            <h2 id="woa">WHAT IS WOA</h2>
+            <iframe id="yt-trailer" width="560" height="315"
+            src="https://www.youtube.com/embed/R_Ob-fupzKg">
+            </iframe>
+        </div>
+        <div class="padding-box section-header">
+            <img id="assasin" src="/assets/images/Assasin.png" alt="Assasinate">
+            <div class="text-container">
+                <h1 class="big-title">Assasinate</h1>
+                <h3 class="sub-title">the way That suits your styles</h3>
+            </div>
+        </div>
+        <hr>
+        <div class="padding-box slider no-scrollbar">
+            <h2 id="your-game">YOUR GAME<br>YOUR RULES</h2>
+            <h3 id="acilis">Acilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus</h3>
+            <div class="article-slider snap-x">
+                <div class="preview p1 bg-cover bg-center snap-start">
+                    <h4 class="uppercase font-semibold">Long Distance</h4>
+                    <h3 class="w-1/2 text-sm pb-2">Vitae hac posuere gravida phasellus montes senectus orci mollis dictumst hac erat mus est vel dolores.</h3>
+                    <button class="text-left underline underline-offset-4 decoration-2 decoration-zinc-600">Read More <strong>+</strong></button>
+                </div>
+                <div class="preview p2 bg-cover bg-center snap-start">
+                    <h4 class="uppercase font-semibold">Silent assassin</h4>
+                    <h3 class="w-1/2 text-sm pb-2">Vitae hac posuere gravida phasellus montes senectus orci mollis dictumst hac erat mus est vel dolores.</h3>
+                    <button class="text-left underline underline-offset-4 decoration-2 decoration-zinc-600">Read More <strong>+</strong></button>
+                </div>
+                <div class="preview p3 bg-cover bg-center snap-start">
+                    <h4 class="uppercase font-semibold">Accidents can happen</h4>
+                    <h3 class="w-1/2 text-sm pb-2">Vitae hac posuere gravida phasellus montes senectus orci mollis dictumst hac erat mus est vel dolores.</h3>
+                    <button class="text-left underline underline-offset-4 decoration-2 decoration-zinc-600">Read More <strong>+</strong></button>
+                </div>
+                <div class="preview p4 bg-cover bg-center snap-start">
+                    <h4 class="uppercase font-semibold">Executioner</h4>
+                    <h3 class="w-1/2 text-sm pb-2">Vitae hac posuere gravida phasellus montes senectus orci mollis dictumst hac erat mus est vel dolores.</h3>
+                    <button class="text-left underline underline-offset-4 decoration-2 decoration-zinc-600">Read More <strong>+</strong></button>
+                </div>
+                <div class="preview p5 bg-cover bg-center snap-start">
+                    <h4 class="uppercase font-semibold">Around the World</h4>
+                    <h3 class="w-1/2 text-sm pb-2">Vitae hac posuere gravida phasellus montes senectus orci mollis dictumst hac erat mus est vel dolores.</h3>
+                    <button class="text-left underline underline-offset-4 decoration-2 decoration-zinc-600">Read More <strong>+</strong></button>
+                </div>
+            </div>
+        </div>
+        <hr>
+
+        <div class="padding-box big-slider">
+            <h2 id="your-game" class="uppercase">Explore A living<br>breating world</h2>
+            <h3 id="Vitae">Vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur. Acilis est et expedita distinctio.</h3>
+            <div class="big-image-slider snap-x">
+                <div class="big-image b1 bg-cover bg-center snap-start">
+                    <div>                    
+                        <img src="/assets/images/image-slider/UnionIcon.png" alt="Globe Icon" class="inline">
+                        <h4 class="uppercase font-semibold inline">Burj Khalifa, Dubai</h4>
+                    </div>
+                    <h3 class="white-text text-sm pb-2">Vitae hac posuere gravida phasellus montes senectus orci mollis dictumst hac erat mus est vel dolores.</h3>
+                </div>
+                <div class="big-image b2 bg-cover bg-center snap-start">
+                    <div>                    
+                        <img src="/assets/images/image-slider/UnionIcon.png" alt="Globe Icon" class="inline">
+                        <h4 class="uppercase font-semibold inline">Mendoza, Argentina</h4>
+                    </div>
+                    <h3 class="white-text text-sm pb-2">Vitae hac posuere gravida phasellus montes senectus orci mollis dictumst hac erat mus est vel dolores.</h3>
+                </div>
+                <div class="big-image b3 bg-cover bg-center snap-start">
+                    <div>                    
+                        <img src="/assets/images/image-slider/UnionIcon.png" alt="Globe Icon" class="inline">
+                        <h4 class="uppercase font-semibold inline">Club Hölle, Germany</h4>
+                    </div>
+                    <h3 class="white-text text-sm pb-2">Vitae hac posuere gravida phasellus montes senectus orci
+                         mollis dictumst hac erat mus est vel dolores.</h3>
+                </div>
+                <div class="big-image b4 bg-cover bg-center snap-start">
+                    <div>                    
+                        <img src="/assets/images/image-slider/UnionIcon.png" alt="Globe Icon" class="inline">
+                        <h4 class="uppercase font-semibold inline">Chonq Ping, China</h4>
+                    </div>
+                    <h3 class="white-text text-sm pb-2">Vitae hac posuere gravida phasellus montes senectus orci mollis dictumst hac erat mus est vel dolores.</h3>
+                </div>
+                <div class="big-image b5 bg-cover bg-center snap-start">
+                    <div>                    
+                        <img src="/assets/images/image-slider/UnionIcon.png" alt="Globe Icon" class="inline">
+                        <h4 class="uppercase font-semibold inline">Whittleton Creek, USA</h4>
+                    </div>
+                    <h3 class="white-text text-sm pb-2">Vitae hac posuere gravida phasellus montes senectus orci mollis dictumst hac erat mus est vel dolores.</h3>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

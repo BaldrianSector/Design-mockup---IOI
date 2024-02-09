@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>🍃 Tailwind</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white overflow-x-hidden">
+    <main>
+        <div class="hero h-screen bg-[url('/assets/images/Hero_Background.svg')] bg-cover bg-center bg-no-repeat px-[7vw] w-screen grid grid-cols-[2fr_1.7fr_0.3fr] grid-rows-[1fr_1fr_1fr]">
+            <header class="z-3 col-span-3 grid grid-cols-[2fr_1.7fr_0.3fr] pt-5">
+                <div class="logo justify-self-start">
+                    <a href="/"><img src="/assets/images/Logo.png" alt="IOI"></a>
+                </div>
+                <nav class="justify-self-start">
+                    <a href="/">Careers</a>
+                    <a href="/">Games</a>
+                    <a href="/">News</a>
+                    <a href="/">About</a>
+                    <a href="/">Store</a>
+                </nav>
+                <div class="account justify-self-end">
+                    <a href="" class="">Account
+                        <img
+                        loading="lazy" class="inline align-baseline"
+                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/10e0d9f819934dade75689029b9e07df3bbc66d62cedf2e82bc8d4bca30c7751?apiKey=ce9ee94cb4674e18a5e0c72137c80dcf&"/>
+                    </a>
+                </div>
+            </header>
+            <ul id="nav-list place-items-1" class="row-start-3 col-start-1 z-3 leading-relaxed">
+                <li><a class="hover:underline decoration-2 decoration-[#ff0000] underline-offset-[5px]" href="/">Introduction</a></li>
+                <li><a class="hover:underline decoration-2 decoration-[#ff0000] underline-offset-[5px]" href="/">Story and features</a></li>
+                <li><a class="hover:underline decoration-2 decoration-[#ff0000] underline-offset-[5px]" href="/">Assasinate</a></li>
+                <li><a class="hover:underline decoration-2 decoration-[#ff0000] underline-offset-[5px]" href="/">Hardware</a></li>
+                <li><a class="hover:underline decoration-2 decoration-[#ff0000] underline-offset-[5px]" href="/">Explore world</a></li>
+                <li><a class="hover:underline decoration-2 decoration-[#ff0000] underline-offset-[5px]" href="/">News</a></li>
+                <li><a class="hover:underline decoration-2 decoration-[#ff0000] underline-offset-[5px]" href="/">Game support</a></li>
+            </ul>
+            <img src="/assets/images/Man.png" alt="Hitman" id="man" class="pointer-events-none select-none z-0 absolute bottom-0 left-[20vw] object-none">
+            <div class="death-awaits row-start-3 col-start-2">
+                <span id="hitman" class="font-bold font-1 text-base text-black bg-[#ff0000] py-[0.2rem] px-[0.5rem]">HITMAN</span> <span id="iii" class="font-bold font-1 text-base text-black bg-[#ff0000] py-[0.2rem] px-[0.5rem]">III</span>
+                <h1 class="font-bold text-6xl mx-[-0.35rem] mt-5 leading-7">DEATH AWAITS</h1>
+                <h3 id="lorem" class="text-base mt-5 font-normal text-gray-500">Tristique quis varius habitasse facilisi semper, penatibus interdum maecenas netus himenaeos aliquet, nam torquent volutpat inceptos. Erat risus ut blandit suspendisse.</h3>
+            </div>
+    
+           <!--  
+   
+            h3 {
+                font-family: var(--secondary-font);
+                color: var(--quaternary-color);
+                line-height: 1.7;
+                font-weight: normal;
+                font-size: 1rem;
+                margin-top: -20px; 
+            } -->
+
+        </div>
+        <div class="container text-module">
+            <h2 id="woa">WHAT IS WOA</h2>
+            <iframe id="yt-trailer" width="560" height="315"
+            src="https://www.youtube.com/embed/R_Ob-fupzKg">
+            </iframe>
+        </div>
+        <div class="container section-header">
+            <img id="assasin" src="assets/images/Assasin.png" alt="Assasinate">
+            <div class="text-container">
+                <h1 class="big-title">Assasinate</h1>
+                <h3 class="sub-title">the way That suits your styles</h3>
+            </div>
+        </div>
+        <div>
+            <div class="container slider">
+                <h2 id="your-game">YOUR GAME<br>YOUR RULES</h2>
+                <h3 id="acilis">Acilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus</h3>
+                <div class="article-slider">
+                    <div class="preview">1</div>
+                    <div class="preview">2</div>
+                    <div class="preview">3</div>
+                    <div class="preview">4</div>
+                    <div class="preview">5</div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
