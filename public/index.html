@@ -4,7 +4,7 @@
     <title>IOI Figma to Website</title>
     <link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico">
     <link rel="stylesheet" href="/src/output.css">
-    <script src="/scripts/script.js" defer></script>
+    <script src="/scripts/script.js" type="module"></script>
 </head>
 
 <style>
@@ -313,6 +313,19 @@ hr {
     scrollbar-width: "none";
 }
 
+.draggable {
+    cursor: move; 
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+}
+
+.draggable:active {
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+}
+
 .article-slider::-webkit-scrollbar {
     display: none;
 }
@@ -396,7 +409,7 @@ hr {
 }
 
 </style>
-<body class="no-scrollbar">
+<body class="no-scrollbar selection:bg-[--tertiary-color] selection:text-white">
     <main>
         <div class="padding-box hero">
             <header>
@@ -410,7 +423,7 @@ hr {
                     <a href="/">About</a>
                     <a href="/">Store</a>
                 </nav>
-                <div class="account b">
+                <div class="account">
                     <a href="">Account
                         <img
                         loading="lazy" class="inline align-baseline"
@@ -429,7 +442,7 @@ hr {
             </ul>
             <img src="/assets/images/Man.png" alt="Hitman" id="man">
             <div class="death-awaits">
-                <span style="background-color: var(--tertiary-color);" id="hitman">HITMAN</span> <span style="background-color: var(--tertiary-color);" id="iii">III</span>
+                <span style="background-color: var(--tertiary-color);" id="hitman">HITMAN</span> <span style="background-color: var(--tertiary-color);" id="iii" class="select-none">III</span>
                 <h1>DEATH AWAITS</h1>
                 <h3 id="lorem" class="-mt-5">Tristique quis varius habitasse facilisi semper, penatibus interdum maecenas netus himenaeos aliquet, nam torquent volutpat inceptos. Erat risus ut blandit suspendisse.</h3>
             </div>
@@ -451,7 +464,7 @@ hr {
         <div class="padding-box slider no-scrollbar">
             <h2 id="your-game">YOUR GAME<br>YOUR RULES</h2>
             <h3 id="acilis">Acilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus</h3>
-            <div class="article-slider snap-x">
+            <div class="article-slider draggable snap-x">
                 <div class="preview p1 bg-cover bg-center snap-start">
                     <h4 class="uppercase font-semibold">Long Distance</h4>
                     <h3 class="w-1/2 text-sm pb-2">Vitae hac posuere gravida phasellus montes senectus orci mollis dictumst hac erat mus est vel dolores.</h3>
@@ -480,11 +493,10 @@ hr {
             </div>
         </div>
         <hr>
-
         <div class="padding-box big-slider">
             <h2 id="your-game" class="uppercase">Explore A living<br>breating world</h2>
             <h3 id="Vitae">Vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur. Acilis est et expedita distinctio.</h3>
-            <div class="big-image-slider snap-x">
+            <div class="big-image-slider draggable snap-x">
                 <div class="big-image b1 bg-cover bg-center snap-start">
                     <div>                    
                         <img src="/assets/images/image-slider/UnionIcon.png" alt="Globe Icon" class="inline">
